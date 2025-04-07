@@ -1,0 +1,48 @@
+package org.jeecg.modules.warehouse.service;
+
+import org.jeecg.modules.warehouse.entity.TbProductSpecification;
+import org.jeecg.modules.warehouse.entity.TbProductInfo;
+import com.baomidou.mybatisplus.extension.service.IService;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
+
+/**
+ * @Description: 商品信息表
+ * @Author: jeecg-boot
+ * @Date:   2025-04-07
+ * @Version: V1.0
+ */
+public interface ITbProductInfoService extends IService<TbProductInfo> {
+
+	/**
+	 * 添加一对多
+	 *
+	 * @param tbProductInfo
+	 * @param tbProductSpecificationList
+	 */
+	public void saveMain(TbProductInfo tbProductInfo,List<TbProductSpecification> tbProductSpecificationList) ;
+	
+	/**
+	 * 修改一对多
+	 *
+   * @param tbProductInfo
+   * @param tbProductSpecificationList
+	 */
+	public void updateMain(TbProductInfo tbProductInfo,List<TbProductSpecification> tbProductSpecificationList);
+	
+	/**
+	 * 删除一对多
+	 *
+	 * @param id
+	 */
+	public void delMain (String id);
+	
+	/**
+	 * 批量删除一对多
+	 *
+	 * @param idList
+	 */
+	public void delBatchMain (Collection<? extends Serializable> idList);
+	
+}

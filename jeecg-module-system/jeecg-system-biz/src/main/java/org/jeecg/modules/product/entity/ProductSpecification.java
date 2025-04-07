@@ -17,7 +17,7 @@ import java.io.UnsupportedEncodingException;
 /**
  * @Description: 商品规格表
  * @Author: jeecg-boot
- * @Date:   2025-04-02
+ * @Date:   2025-04-07
  * @Version: V1.0
  */
 @ApiModel(value="tb_product_specification对象", description="商品规格表")
@@ -76,4 +76,12 @@ public class ProductSpecification implements Serializable {
 	@Excel(name = "商品库存", width = 15)
     @ApiModelProperty(value = "商品库存")
     private java.lang.Integer productInventory;
+	/**商家id*/
+	@Excel(name = "商家id", width = 15, dictTable = "tb_merchant_info", dicText = "name", dicCode = "id")
+    @ApiModelProperty(value = "商家id")
+    private java.lang.String merchantId;
+	/**仓库id*/
+	@Excel(name = "仓库id", width = 15, dictTable = "tb_warehouse_info", dicText = "name", dicCode = "id")
+    @ApiModelProperty(value = "仓库id")
+    private java.lang.String warehouseId;
 }

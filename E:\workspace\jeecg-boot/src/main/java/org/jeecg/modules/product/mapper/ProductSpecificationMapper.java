@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Param;
 /**
  * @Description: 商品规格表
  * @Author: jeecg-boot
- * @Date:   2025-04-02
+ * @Date:   2025-04-07
  * @Version: V1.0
  */
 public interface ProductSpecificationMapper extends BaseMapper<ProductSpecification> {

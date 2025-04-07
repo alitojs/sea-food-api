@@ -16,7 +16,7 @@ import java.util.Collection;
 /**
  * @Description: 商品信息表
  * @Author: jeecg-boot
- * @Date:   2025-04-02
+ * @Date:   2025-04-07
  * @Version: V1.0
  */
 @Service

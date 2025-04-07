@@ -17,7 +17,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * @Description: 商品信息表
  * @Author: jeecg-boot
- * @Date:   2025-04-02
+ * @Date:   2025-04-07
  * @Version: V1.0
  */
 @Data
@@ -73,6 +73,11 @@ public class ProductInfoPage {
 	@Excel(name = "商品主图", width = 15)
 	@ApiModelProperty(value = "商品主图")
     private java.lang.String mainPicture;
+	/**商家id*/
+	@Excel(name = "商家id", width = 15, dictTable = "tb_merchant_info", dicText = "name", dicCode = "id")
+    @Dict(dictTable = "tb_merchant_info", dicText = "name", dicCode = "id")
+	@ApiModelProperty(value = "商家id")
+    private java.lang.String merchantId;
 
 	@ExcelCollection(name="商品规格表")
 	@ApiModelProperty(value = "商品规格表")

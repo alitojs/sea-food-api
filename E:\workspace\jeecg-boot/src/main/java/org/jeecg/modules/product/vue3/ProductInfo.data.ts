@@ -42,6 +42,11 @@ export const columns: BasicColumn[] = [
     dataIndex: 'mainPicture',
     customRender:render.renderImage,
    },
+   {
+    title: '商家id',
+    align:"center",
+    dataIndex: 'merchantId_dictText'
+   },
 ];
 //查询数据
 export const searchFormSchema: FormSchema[] = [
@@ -135,6 +140,15 @@ export const formSchema: FormSchema[] = [
         fileMax: 0
       },
   },
+  {
+    label: '商家id',
+    field: 'merchantId',
+    component: 'JDictSelectTag',
+    componentProps:{
+        dictCode:"tb_merchant_info,name,id",
+        type: "radio"
+     },
+  },
 	// TODO 主键隐藏字段，目前写死为ID
 	{
 	  label: '',
@@ -204,6 +218,26 @@ export const productSpecificationColumns: JVxeColumn[] = [
       placeholder: '请输入${title}',
       defaultValue:'',
     },
+    {
+      title: '商家id',
+      key: 'merchantId',
+      type: JVxeTypes.select,
+      options:[],
+      dictCode:"tb_merchant_info,name,id",
+      width:"200px",
+      placeholder: '请输入${title}',
+      defaultValue:'',
+    },
+    {
+      title: '仓库id',
+      key: 'warehouseId',
+      type: JVxeTypes.select,
+      options:[],
+      dictCode:"tb_warehouse_info,name,id",
+      width:"200px",
+      placeholder: '请输入${title}',
+      defaultValue:'',
+    },
   ]
 
 
@@ -215,6 +249,7 @@ export const superQuerySchema = {
   limitedQuantity: {title: '限购数量',order: 3,view: 'number', type: 'number',},
   isListing: {title: '是否上架',order: 4,view: 'number', type: 'number',dictCode: 'yn',},
   mainPicture: {title: '商品主图',order: 5,view: 'image', type: 'string',},
+  merchantId: {title: '商家id',order: 6,view: 'radio', type: 'string',dictTable: "tb_merchant_info", dictCode: 'id', dictText: 'name',},
   //子表高级查询
   productSpecification: {
     title: '商品规格表',
@@ -226,6 +261,8 @@ export const superQuerySchema = {
         isListing: {title: '是否上架',order: 4,view: 'number', type: 'number',dictCode: 'yn',},
         otherPicture: {title: '商品附图',order: 5,view: 'image', type: 'string',},
         productInventory: {title: '商品库存',order: 6,view: 'number', type: 'number',},
+        merchantId: {title: '商家id',order: 7,view: 'radio', type: 'string',dictTable: "tb_merchant_info", dictCode: 'id', dictText: 'name',},
+        warehouseId: {title: '仓库id',order: 8,view: 'radio', type: 'string',dictTable: "tb_warehouse_info", dictCode: 'id', dictText: 'name',},
     }
   },
 };
