@@ -24,4 +24,9 @@ public class ProductSpecificationServiceImpl extends ServiceImpl<ProductSpecific
 	public List<ProductSpecification> selectByMainId(String mainId) {
 		return productSpecificationMapper.selectByMainId(mainId);
 	}
+
+	@Override
+	public boolean deleteByMainId(String mainId) {
+		return productSpecificationMapper.deleteByMainId(mainId);
+	}
 }

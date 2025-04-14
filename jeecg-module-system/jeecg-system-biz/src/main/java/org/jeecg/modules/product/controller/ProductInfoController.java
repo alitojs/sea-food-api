@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.jeecg.modules.product.entity.vo.ProductBatchEditVO;
 import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.def.NormalExcelConstants;
 import org.jeecgframework.poi.excel.entity.ExportParams;
@@ -94,6 +95,17 @@ public class ProductInfoController {
 		productInfoService.saveMain(productInfo, productInfoPage.getProductSpecificationList());
 		return Result.OK("添加成功！");
 	}
+
+	 /**
+	  *   批量修改商品规格的仓库
+	  * @return
+	  */
+	 @AutoLog(value = "商品信息表-批量修改商品规格的仓库")
+	 @ApiOperation(value = "商品信息表-批量修改商品规格的仓库", notes = "商品信息表-批量修改商品规格的仓库")
+	 @PostMapping(value = "/batchEditWaveHouseByProductSpecification")
+	 public Result<String> batchEditWaveHouseByProductSpecification(@RequestBody ProductBatchEditVO productBatchEditVO) {
+		 return productInfoService.batchEditWaveHouseByProductSpecification(productBatchEditVO);
+	 }
 	
 	/**
 	 *  编辑

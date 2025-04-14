@@ -164,8 +164,8 @@ spring:
           slow-sql-millis: 5000
       datasource:
         master:
-          url: jdbc:mysql://120.46.37.91:1241/seafood-supermarket?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
-          username: seafood
+          url: jdbc:mysql://175.24.55.111:1241/supermarket?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+          username: supermarket
           password: RHkPNDHrpbEf2DF8
           driver-class-name: com.mysql.cj.jdbc.Driver
           # 多数据源配置

@@ -19,4 +19,12 @@ public interface IProductSpecificationService extends IService<ProductSpecificat
 	 * @return List<ProductSpecification>
 	 */
 	public List<ProductSpecification> selectByMainId(String mainId);
+
+	/**
+	 * 通过主表id删除子表数据
+	 *
+	 * @param mainId 主表id
+	 * @return boolean
+	 */
+	public boolean deleteByMainId(String mainId);
 }

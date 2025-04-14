@@ -1,8 +1,11 @@
 package org.jeecg.modules.product.service;
 
+import org.jeecg.common.api.vo.Result;
 import org.jeecg.modules.product.entity.ProductSpecification;
 import org.jeecg.modules.product.entity.ProductInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.jeecg.modules.product.entity.vo.ProductBatchEditVO;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
@@ -44,5 +47,12 @@ public interface IProductInfoService extends IService<ProductInfo> {
 	 * @param idList
 	 */
 	public void delBatchMain (Collection<? extends Serializable> idList);
+
+	/**
+	 * 批量修改商品规格的仓库
+	 * @param productBatchEditVO
+	 * @return
+	 */
+	Result<String> batchEditWaveHouseByProductSpecification(ProductBatchEditVO productBatchEditVO);
 	
 }
