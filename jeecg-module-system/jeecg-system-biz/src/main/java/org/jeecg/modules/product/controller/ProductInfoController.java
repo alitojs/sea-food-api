@@ -78,6 +78,8 @@ public class ProductInfoController {
 		IPage<ProductInfo> pageList = productInfoService.page(page, queryWrapper);
 		return Result.OK(pageList);
 	}
+
+
 	
 	/**
 	 *   添加
